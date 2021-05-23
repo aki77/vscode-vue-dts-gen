@@ -1,0 +1,63 @@
+{
+  "name": "vue-dts-gen",
+  "displayName": "vue-dts-gen",
+  "description": "Creates .d.ts files from .vue files",
+  "publisher": "aki77",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aki77/vscode-vue-dts-gen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aki77/vscode-vue-dts-gen/issues"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.56.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:vue"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vueDtsGen.generate",
+        "title": "Generate vue dts"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.56.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0"
+  },
+  "dependencies": {
+    "execa": "^5.0.0",
+    "strip-ansi": "^6.0.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "printWidth": 120
+  }
+}
